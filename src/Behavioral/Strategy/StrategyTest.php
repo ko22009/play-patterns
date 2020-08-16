@@ -25,7 +25,7 @@ class StrategyTest extends TestCase
         $strategyA = new StrategyPowDouble(2);
         $this->context->set($strategyA);
         $output = $this->context->execute();
-        $this->assertEquals('4', $output);
+        $this->assertEquals(4, $output);
     }
 
     public function testChangeAndRunContext()
@@ -35,6 +35,6 @@ class StrategyTest extends TestCase
         $strategyB = new StrategyPlus(4, 4);
         $this->context->set($strategyB);
         $output = $this->context->execute();
-        $this->assertEquals('8', $output);
+        $this->assertEquals(8, $output);
     }
 }
