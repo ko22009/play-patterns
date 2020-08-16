@@ -3,6 +3,7 @@
     <testsuites>
         <testsuite name="Patterns">
             <directory suffix="Test.php">src/Behavioral/*</directory>
+            <directory suffix="Test.php">src/Another/*</directory>
         </testsuite>
     </testsuites>
 </phpunit>
