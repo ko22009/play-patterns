@@ -2,7 +2,8 @@
 
 namespace PlayPatterns\Behavioral\State;
 
-class DraftState extends State {
+class DraftState extends State
+{
 
     public function publish()
     {

@@ -12,7 +12,8 @@ class Document
         $this->setState($state);
     }
 
-    public function getState() {
+    public function getState()
+    {
         return $this->state;
     }
 

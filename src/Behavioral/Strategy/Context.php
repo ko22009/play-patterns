@@ -6,7 +6,8 @@ class Context
 {
     private Strategy $context;
 
-    public function set($strategy) {
+    public function set($strategy)
+    {
         $this->context = $strategy;
     }
 
@@ -15,7 +16,8 @@ class Context
         return $this->context;
     }
 
-    public function execute() {
+    public function execute()
+    {
         return $this->context->execute();
     }
 }

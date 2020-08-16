@@ -2,11 +2,13 @@
 
 namespace PlayPatterns\Behavioral\State;
 
-abstract class State {
+abstract class State
+{
 
     protected Document $document;
 
-    public function setDocument(Document $document) {
+    public function setDocument(Document $document)
+    {
         $this->document = $document;
     }
 
