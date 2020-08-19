@@ -30,7 +30,7 @@ class Folder extends Entity
 
     public function getStructure(int $level = 0)
     {
-        $output = str_repeat(' ', 2 * $level) . $this->getTitle() . '\\' . PHP_EOL;
+        $output = str_repeat(' ', 2 * $level) . $this->getTitle() . PHP_EOL;
         $level++;
         foreach ($this->entities as $entity) {
             $output .= $entity->getStructure($level);
@@ -40,9 +40,9 @@ class Folder extends Entity
 
     public function getCurrentStructure()
     {
-        $output = [];
+        $output = '';
         foreach ($this->entities as $entity) {
-            $output[] = $entity->getTitle();
+            $output .= $entity->getTitle() . PHP_EOL;
         }
         return $output;
     }
@@ -50,11 +50,16 @@ class Folder extends Entity
     public function open($name = '')
     {
         foreach ($this->entities as $entity) {
-            if ($entity->getTitle() == $name) {
+            if ($entity->getName() == $name) {
                 return $entity->open('');
             }
         }
         return $name ? null : $this;
+    }
+
+    public function getTitle()
+    {
+        return parent::getTitle() . '\\';
     }
 
 }

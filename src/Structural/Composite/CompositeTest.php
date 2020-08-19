@@ -46,11 +46,23 @@ class CompositeTest extends TestCase
         $this->assertEquals($structure, $this->structure->getStructure());
     }
 
-    public function testAvailableFolderPhotosInCurrentDirectoryIsTrue()
+    public function testCompositeGetStructureOneLevelDeeper()
     {
+        $structure = 'photos\\' . PHP_EOL . '  winter\\' . PHP_EOL . '    11DSC02405.jpg' . PHP_EOL . '    23DSC04344.jpg' . PHP_EOL;
+        $this->assertEquals($structure, $this->structure->open('photos')->getStructure());
+    }
+
+    public function testCompositeGetCurrentStructureTwoLevelDeeper()
+    {
+        $structure = '11DSC02405.jpg' . PHP_EOL . '23DSC04344.jpg' . PHP_EOL;
+        $this->assertEquals($structure, $this->structure->open('photos')->open('winter')->getCurrentStructure());
+    }
+
+    public function testAvailableFolderPhotosInCurrentDirectory()
+    {
+        $structure = 'photos\\' . PHP_EOL . 'videos\\' . PHP_EOL;
         $availableEntities = $this->structure->getCurrentStructure();
-        $fotoAvailable = in_array('photos', $availableEntities);
-        $this->assertTrue($fotoAvailable);
+        $this->assertEquals($structure, $availableEntities);
     }
 
     public function testOpenFolderPhotosInCurrentDirectoryIsNotNull()

@@ -17,6 +17,11 @@ abstract class Entity
         return $this->title;
     }
 
+    public function getName()
+    {
+        return $this->title;
+    }
+
     /**
      * @param string $name
      * @return Entity|string|null
