@@ -1,15 +1,15 @@
 <?php
 
-namespace PlayPatterns\Principles\DependencyInversion;
+namespace PlayPatterns\Principles\InterfaceSegregation;
 
-class UpperText implements Upper, Text
+class LowerText implements Lower, Text
 {
 
     private string $text;
 
-    public function getUpper()
+    public function getLower()
     {
-        return strtoupper($this->get());
+        return strtolower($this->get());
     }
 
     public function get()

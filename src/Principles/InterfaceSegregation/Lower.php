@@ -1,6 +1,6 @@
 <?php
 
-namespace PlayPatterns\Principles\DependencyInversion;
+namespace PlayPatterns\Principles\InterfaceSegregation;
 
 interface Lower
 {
