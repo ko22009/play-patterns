@@ -4,7 +4,7 @@ namespace PlayPatterns\Structural\Composite;
 
 class File extends Entity
 {
-    private $content;
+    private string $content;
 
     public function __construct($title, $content)
     {
@@ -12,7 +12,7 @@ class File extends Entity
         $this->content = $content;
     }
 
-    public function getContent()
+    public function open($name = ''): string
     {
         return $this->content;
     }

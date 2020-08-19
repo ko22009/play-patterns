@@ -61,14 +61,15 @@ class CompositeTest extends TestCase
 
     public function testOpenFolderAnotherInCurrentDirectoryIsNull()
     {
-        $photos = $this->structure->open('another');
-        $this->assertNull($photos);
+        $another = $this->structure->open('another');
+        if (!is_null($another)) $another = $another->open('winter');
+        $this->assertNull($another);
     }
 
     public function testOpenFilePhotoInPhotosWinterFolder()
     {
-        $content = $this->structure->open('photos')->open('winter')->open('11DSC02405.jpg');
-        $this->assertEquals('test', $content);
+        $jpg = $this->structure->open('photos')->open('winter')->open('11DSC02405.jpg');
+        $this->assertEquals('test', $jpg);
     }
 
 }
