@@ -1,6 +1,6 @@
 <?php
 
-namespace PlayPatterns\Another\Liskov;
+namespace PlayPatterns\Principles\LiskovSubstitution;
 
 class SquareIncorrect extends RectangleIncorrect
 {

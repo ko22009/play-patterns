@@ -1,6 +1,6 @@
 <?php
 
-namespace PlayPatterns\Another\Liskov;
+namespace PlayPatterns\Principles\LiskovSubstitution;
 
 class RectangleIncorrect
 {
@@ -10,11 +10,17 @@ class RectangleIncorrect
 
     public function setWidth(int $width)
     {
+        if ($this instanceof SquareIncorrect) {
+            $this->height = $width;
+        }
         $this->width = $width;
     }
 
     public function setHeight(int $height)
     {
+        if ($this instanceof SquareIncorrect) {
+            $this->width = $height;
+        }
         $this->height = $height;
     }
 

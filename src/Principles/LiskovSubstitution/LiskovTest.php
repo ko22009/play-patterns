@@ -1,6 +1,6 @@
 <?php
 
-namespace PlayPatterns\Another\Liskov;
+namespace PlayPatterns\Principles\LiskovSubstitution;
 
 use PHPUnit\Framework\TestCase;
 
