@@ -7,8 +7,8 @@ class LogSender extends BaseSender
 
     public function send($text)
     {
-        parent::send($text);
-        echo 'log:' . $text . PHP_EOL;
+        $output = parent::send($text);
+        return $output . 'log:' . $text . PHP_EOL;
     }
 
 }

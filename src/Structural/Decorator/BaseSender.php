@@ -18,7 +18,7 @@ abstract class BaseSender implements Sender
     public function send($text)
     {
         if ($this->sender) return $this->sender->send($text);
-        return $text;
+        return '';
     }
 
 }

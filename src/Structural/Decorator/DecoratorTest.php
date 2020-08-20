@@ -12,7 +12,9 @@ class DecoratorTest extends TestCase
         $logSender = new LogSender();
         $smsSender = new SMSSender($logSender);
         $emailSender = new EmailSender($smsSender);
-        $emailSender->send('hello world');
+        $output = $emailSender->send('hello world');
+        $expected = 'log:hello world' . PHP_EOL . 'sms:hello world' . PHP_EOL . 'email:hello world' . PHP_EOL;
+        $this->assertEquals($expected, $output);
     }
 
 }

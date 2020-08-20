@@ -7,8 +7,8 @@ class EmailSender extends BaseSender
 
     public function send($text)
     {
-        parent::send($text);
-        echo 'email:' . $text . PHP_EOL;
+        $output = parent::send($text);
+        return $output . 'email:' . $text . PHP_EOL;
     }
 
 }
