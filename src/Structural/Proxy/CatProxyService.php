@@ -8,10 +8,10 @@ class CatProxyService implements Service
     private $animal;
     private CatService $catService;
 
-    public function __construct($animal, $catService)
+    public function __construct($animal)
     {
         $this->animal = $animal;
-        $this->catService = $catService;
+        $this->catService = new CatService();
     }
 
     public function execute()
