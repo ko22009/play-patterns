@@ -7,11 +7,24 @@ use PHPUnit\Framework\TestCase;
 class CircleTest extends TestCase
 {
 
-    public function testCloneCircle()
+    public function testCloneCircleByMethod()
     {
-        $circle = new Circle(2);
+        $circle = new Circle(2, new Color('red'));
         $newCircle = $circle->clone();
-        $this->assertTrue($circle !== $newCircle && $circle->getR() == $newCircle->getR());
+        $newCircle->setColor('blue');
+        $diffColor = $circle->getColor() != $newCircle->getColor();
+        $theSameR = $circle->getR() == $newCircle->getR();
+        $this->assertTrue($circle !== $newCircle && $theSameR && $diffColor);
+    }
+
+    public function testCloneCircleByCloneConstructor()
+    {
+        $circle = new Circle(2, new Color('red'));
+        $newCircle = clone $circle;
+        $newCircle->setColor('blue');
+        $diffColor = $circle->getColor() != $newCircle->getColor();
+        $theSameR = $circle->getR() == $newCircle->getR();
+        $this->assertTrue($circle !== $newCircle && $theSameR && $diffColor);
     }
 
 }

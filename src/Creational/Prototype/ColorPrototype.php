@@ -2,10 +2,8 @@
 
 namespace PlayPatterns\Creational\Prototype;
 
-interface CirclePrototype extends Prototype
+interface ColorPrototype extends Prototype
 {
-
-    public function getR();
 
     public function setColor($name);
 
