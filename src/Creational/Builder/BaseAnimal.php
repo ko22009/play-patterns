@@ -9,6 +9,13 @@ class BaseAnimal implements Animal
     private string $owner;
     private float $weigth;
 
+    public function __construct()
+    {
+        $this->setBread('');
+        $this->setOwner('');
+        $this->setWeight(0.0);
+    }
+
     public function setOwner(string $name)
     {
         $this->owner = $name;

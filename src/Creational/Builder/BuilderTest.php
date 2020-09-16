@@ -10,8 +10,8 @@ class BuilderTest extends TestCase
     public function testCatBuilder()
     {
         $catBuilder = new CatBuilder();
-        $director = new Director($catBuilder);
-        $director->make(Director::TYPE_HOME);
+        $director = DirectorBuilder::getType($catBuilder, new Type(Type::home()));
+        $director->make();
         $cat = $catBuilder->getResult();
         $this->assertEquals('cat:Retriever', $cat->getBread());
     }
@@ -19,9 +19,9 @@ class BuilderTest extends TestCase
     public function testDogBuilderTheSameProperty()
     {
         $dogBuilder = new DogBuilder();
-        $director = new Director($dogBuilder);
+        $director = DirectorBuilder::getType($dogBuilder, new Type(Type::street()));
 
-        $director->make(Director::TYPE_STREET);
+        $director->make();
         $dog = $dogBuilder->getResult();
 
         $newDog = new Dog();
