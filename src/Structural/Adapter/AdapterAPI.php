@@ -2,23 +2,19 @@
 
 namespace PlayPatterns\Structural\Adapter;
 
-class AdapterAPI implements API
+abstract class AdapterAPI implements API
 {
 
-    private API $api;
+    protected API $api;
 
     public function __construct(API $api)
     {
         $this->api = $api;
     }
 
-    public function get()
+    protected function k()
     {
-        $k = 0.0254;
-        if ($this->api instanceof MeterAPI) {
-            $k = 1 / $k;
-        }
-        return $this->api->get() * $k;
+        return 0.0254;
     }
 
 }
