@@ -9,16 +9,16 @@ class ProxyTest extends TestCase
 
     public function testCatProxyCatAvailable()
     {
-        $catProxyService = new CatProxyService(new Cat());
-        $output = $catProxyService->execute();
+        $proxyService = new ProxyService(new Cat());
+        $output = $proxyService->execute();
         $this->assertEquals('mya', $output);
     }
 
     public function testCatProxyDogDenied()
     {
-        $catProxyService = new CatProxyService(new Dog());
-        $output = $catProxyService->execute();
-        $this->assertEquals(null, $output);
+        $proxyService = new ProxyService(new Dog());
+        $output = $proxyService->execute();
+        $this->assertEquals('not realize', $output);
     }
 
 }

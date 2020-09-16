@@ -2,10 +2,13 @@
 
 namespace PlayPatterns\Structural\Proxy;
 
-interface Service
+class Service
 {
 
-    public function execute();
+    public function execute()
+    {
+        return 'not realize';
+    }
 
 }
 

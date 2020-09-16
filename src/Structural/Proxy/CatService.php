@@ -2,7 +2,7 @@
 
 namespace PlayPatterns\Structural\Proxy;
 
-class CatService implements Service
+class CatService extends Service
 {
 
     public function execute()
